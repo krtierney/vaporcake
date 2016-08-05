@@ -11,8 +11,7 @@
 </p>
 
 <p>
-  <strong>Image:</strong>
-  <%= image_tag @release.release_art.url %>
+  <%= image_tag @release.release_art.detail.url %>
 </p>
 <% if current_user.is_admin %>
 <%= link_to 'Edit', edit_release_path(@release) %> |
