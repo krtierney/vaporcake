@@ -34,6 +34,7 @@
 <% if current_user.is_admin %>
 <%= link_to 'Edit Profile', edit_user_path(@user) %> |
 <%= link_to 'View All Users', users_path %> | 
-<%= link_to 'View All Questions', questions_path %>
+<%= link_to 'View All Questions', questions_path %> | 
+<%= link_to 'New Release', new_release_path %>
 
 <% end %>
