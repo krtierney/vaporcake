@@ -1,6 +1,11 @@
 <p id="notice"><%= notice %></p>
+<% if current_user == @user %>
 <h2>Hi, <%= @user.username %></h2>
-<li><%= link_to 'Edit Profile', edit_user_registration_path %></li>
+<%= link_to 'Edit Responses', bulk_edit_questions_path %> | 
+<%= link_to 'Edit Login', edit_user_registration_path %>
+<% else %>
+<h2><%= @user.username %></h2>
+<% end %>
 <p>
   <strong>Username:</strong>
   <%= @user.username %>
@@ -8,7 +13,7 @@
 
 <p>
   <strong>Logged in:</strong>
-  <%= @user.logged_in %>
+  <%= @user.logged_in? %>
 </p>
 
 <p>
@@ -17,12 +22,18 @@
 </p>
 
 <% @responses.each do |question| %>
-<p><%= question.content %></p>
-<% if !!question.response_id %>
-  <% @asked = question.response_id %>
-  <% Question.find(@asked).content %>
+  <p><%= question.content %><br />
+  <% if !!question.responses %>
+    <% @asked = question.responses %>
+    <% @asked.each do |question| %>
+    <%= question.content %></p>
+    <% end %>
   <% end %>
 <% end %>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+<% if current_user.is_admin %>
+<%= link_to 'Edit Profile', edit_user_path(@user) %> |
+<%= link_to 'View All Users', users_path %> | 
+<%= link_to 'View All Questions', questions_path %>
+
+<% end %>

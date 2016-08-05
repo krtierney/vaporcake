@@ -1,5 +1,5 @@
 class QuestionsController < ApplicationController
-  before_action :set_question, only: [:show, :edit, :update, :destroy]
+  before_action :set_question, only: [:show, :update, :destroy]
   before_action :authenticate_user!
 
   def index
@@ -15,6 +15,7 @@ class QuestionsController < ApplicationController
   end
 
   def edit
+    @responses = current_user.questions_created
   end
 
   def create
@@ -31,10 +32,18 @@ class QuestionsController < ApplicationController
     end
   end
 
+  def bulk_update
+    params['questions'].each do |id, updated_question|
+      question = Question.find(id)
+      question.update!(content: updated_question['content'])
+    end
+    redirect_to questions_url
+  end
+
   def update
     respond_to do |format|
       if @question.update(question_params)
-        format.html { redirect_to @question, notice: 'Question was successfully updated.' }
+        format.html { redirect_to user_path(current_user) }
         format.json { render :show, status: :ok, location: @question }
       else
         format.html { render :edit }

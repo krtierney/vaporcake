@@ -1,6 +1,28 @@
 <h1>Editing Question</h1>
+<%= bulk_update_questions_path %>
+<%= form_tag bulk_update_questions_path do %> 
+  <% @responses.each do |question| %>
+    <%= fields_for "questions[]", question do |f| %>
+      <% if question.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(question.errors.count, "error") %> prohibited this question from being saved:</h2>
 
-<%= render 'form', question: @question %>
+          <ul>
+          <% question.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+          </ul>
+        </div>
+      <% end %>
 
-<%= link_to 'Show', @question %> |
-<%= link_to 'Back', questions_path %>
+      <div class="field">
+        <%= f.text_area :content %>
+      </div>
+
+      <%= link_to 'Delete', question, method: :delete, data: { confirm: 'Are you sure?' } %>
+    <% end %>
+  <% end %>
+  <div class="actions">
+    <%= submit_tag %>
+  </div>
+<% end %>
