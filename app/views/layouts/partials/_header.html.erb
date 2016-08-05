@@ -1,0 +1,15 @@
+<header>
+  <nav>
+    <ul>
+      <li><%= link_to 'Home', root_path %></li>
+      <li><%= link_to 'Discography', 'http://vaporwave.bandcamp.com' %></li>
+      <% if current_user %>
+        <li><%= link_to current_user.username.titleize, user_path(current_user) %></li>
+        <li><%= link_to 'Log Out', destroy_user_session_path, method: :delete %></li>
+      <% else %>
+        <li><%= link_to 'Sign In', new_user_session_path %></li>
+        <li><%= link_to 'Register', new_user_registration_path %></li>
+      <% end %>
+    </ul>
+  </nav>
+</header>

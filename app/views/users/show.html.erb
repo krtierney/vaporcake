@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+<h2>Hi, <%= @user.username %></h2>
+<li><%= link_to 'Edit Profile', edit_user_registration_path %></li>
+<p>
+  <strong>Username:</strong>
+  <%= @user.username %>
+</p>
+
+<p>
+  <strong>Logged in:</strong>
+  <%= @user.logged_in %>
+</p>
+
+<p>
+  <strong>Is admin:</strong>
+  <%= @user.is_admin %>
+</p>
+
+<% @responses.each do |question| %>
+<p><%= question.content %></p>
+<% if !!question.response_id %>
+  <% @asked = question.response_id %>
+  <% Question.find(@asked).content %>
+  <% end %>
+<% end %>
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>
