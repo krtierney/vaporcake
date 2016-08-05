@@ -7,7 +7,6 @@
     <tr>
       <th>Title</th>
       <th>Description</th>
-      <th>Text</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -17,7 +16,6 @@
       <tr>
         <td><%= release.title %></td>
         <td><%= release.description %></td>
-        <td><%= release.text %></td>
         <td><%= link_to 'Show', release %></td>
         <td><%= link_to 'Edit', edit_release_path(release) %></td>
         <td><%= link_to 'Destroy', release, method: :delete, data: { confirm: 'Are you sure?' } %></td>
