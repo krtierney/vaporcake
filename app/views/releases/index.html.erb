@@ -1,10 +1,6 @@
 <p id="notice"><%= notice %></p>
-
-<h1>Releases</h1>
-
-<% @releases.each do |release| %>
-
-  <%= link_to (image_tag release.release_art.thumb.url), release %>
-<% end %>
-
-
+<ul id="discography">
+  <% @releases.each do |release| %>
+    <li><%= link_to (image_tag release.release_art.thumb.url), release %></li>
+  <% end %>
+</ul>

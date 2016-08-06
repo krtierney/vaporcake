@@ -1,0 +1,15 @@
+.field input {
+  background-color: white;
+  margin-bottom: 20px;
+  width: 33%;
+  &:focus {
+    outline-style: none;
+  }
+  color: $dark-gray;
+}
+
+.actions input {
+  background-color: $primary-color;
+  font-weight: 500;
+  padding: 15px 30px;
+}

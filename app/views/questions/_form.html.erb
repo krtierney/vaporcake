@@ -15,10 +15,10 @@
   <% question.response_id = 0 if !question.response_id %>
 
   <div class="field">
-    <%= f.text_area :content %>
+    <%= f.text_field :content, placeholder: 'Please respond with a question' %>
   </div>
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit 'Submit' %>
   </div>
 <% end %>

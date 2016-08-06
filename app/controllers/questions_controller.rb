@@ -23,7 +23,7 @@ class QuestionsController < ApplicationController
 
     respond_to do |format|
       if @question.save
-        format.html { redirect_to root_path }
+        format.html { redirect_to new_question_path }
         format.json { render :show, status: :created, location: @question }
       else
         format.html { render :new }

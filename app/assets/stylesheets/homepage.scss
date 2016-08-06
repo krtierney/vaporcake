@@ -1,0 +1,74 @@
+@import 'reset';
+@import 'buttons';
+@import 'helpers';
+@import 'https://fonts.googleapis.com/css?family=Bungee+Hairline|Bungee+Outline|Roboto:100,300,400,500,700,900&subset=latin-ext';
+
+$primary-color: rgba(255,220,255,1);
+
+
+body, h3, p, .btn, a {
+  font-family: 'Roboto', 'Helvetica', 'Verdana', sans-serif;
+  color: white;
+}
+
+body {
+  background: url('homepagebg.jpg') no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  width: 100%;
+  height: 100vh;
+  margin: 0 auto;
+  text-align: center;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  h1 {
+    font-family: 'Bungee Outline', cursive;
+    font-size: 120px;
+    text-transform: uppercase;
+    color: $primary-color;
+    text-shadow: 0 0 10px $primary-color, 0 0 20px $primary-color, 0 0 30px $primary-color, 0 0 40px #ff00de, 0 0 70px #ff00de, 0 0 80px #ff00de, 0 0 100px #ff00de, 0 0 150px #ff00de;
+  }
+
+  h3 {
+    color: white;
+    font-size: 80px;
+    font-weight: 100;
+    font-size: 40px;
+  }
+
+  .btn {
+    border: white 2px solid;
+    margin: 70px;
+    text-transform: uppercase;
+    display: inline-block;
+    padding: 15px 30px;
+    font-weight: 400;
+    font-size: 28px;
+    color: white;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  p {
+    color: $primary-color;
+    line-height: 1.6em;
+
+    .itals { font-style: italic; }
+  }
+
+  a {
+    text-decoration: none;
+    color: darken($primary-color, 20%);
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

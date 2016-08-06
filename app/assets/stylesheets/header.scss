@@ -5,6 +5,25 @@ header {
   background: transparent;
   width: 100%;
   
+  h1 {
+    clear:both;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 120px;
+    font-weight: 700;
+    color: transparent;
+    text-transform: uppercase;
+    -webkit-transition: text-shadow 1s ease;
+    text-shadow: 0 0 1px rgba(0,0,0,.1);
+    font-style: italic;
+  }
+}
+
+#clip {
+  background: url('textbg.jpg');
+    background-size: cover;
+    color: #fff;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
 }
 
 nav {
@@ -15,9 +34,8 @@ nav {
 
 nav ul li {
   display: inline-block;
-  margin: 5px;
+  margin: 10px;
   font-size: 20px;
-  font-weight: 600;
 }
 
 nav ul li:last-child {
@@ -25,8 +43,10 @@ nav ul li:last-child {
 }
 
 nav ul li a {
+  color: $primary-color;
   text-decoration: none;
 }
 
 nav ul li a:hover {
+  color: white;
 }
