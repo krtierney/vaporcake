@@ -6,6 +6,10 @@
 <% else %>
 <h2><%= @user.username %></h2>
 <% end %>
+
+<% if !!@user.user_image.url %>
+<%= image_tag @user.user_image.detail.url %>
+<% end %>
 <p>
   <strong>Username:</strong>
   <%= @user.username %>

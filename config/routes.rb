@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
-  resources :releases
+  get 'statics/homepage'
+
+  
   devise_for :users
-  root "questions#new"
+
+  root "statics#homepage"
 
   resources :questions do 
     collection do
@@ -10,4 +13,5 @@ Rails.application.routes.draw do
     end
   end
   resources :users
+  resources :releases
 end

@@ -16,17 +16,22 @@ class ApplicationController < ActionController::Base
       helper_method :require_admin
 
       def configure_permitted_parameters      
-        devise_parameter_sanitizer.permit(:account_update, keys: [:username])
-        devise_parameter_sanitizer.permit(:sign_up, keys: [:username])
+        devise_parameter_sanitizer.permit(:account_update, keys: [:username, :user_image])
+        devise_parameter_sanitizer.permit(:sign_up, keys: [:username, :user_image])
         devise_parameter_sanitizer.permit(:sign_in, keys: [:logged_in])
       end
 
       def after_sign_in_path_for(resource)
-        root_path
+        new_question_path
       end
 
       def after_sign_out_path_for(resource)
         root_path
+      end
+
+      #Doesn't work-- check later?
+      def after_update_path_for(resource)
+        user_path(current_user)
       end
 
       def set_user_logged_in_state_to_true
