@@ -1,44 +1,38 @@
-<p id="notice"><%= notice %></p>
-<% if current_user == @user %>
-<h2>Hi, <%= @user.username %></h2>
-<%= link_to 'Edit Responses', bulk_edit_questions_path %> | 
-<%= link_to 'Edit Login', edit_user_registration_path %>
-<% else %>
-<h2><%= @user.username %></h2>
-<% end %>
-
-<% if !!@user.user_image.url %>
-<%= image_tag @user.user_image.detail.url %>
-<% end %>
-<p>
-  <strong>Username:</strong>
-  <%= @user.username %>
-</p>
-
-<p>
-  <strong>Logged in:</strong>
-  <%= @user.logged_in? %>
-</p>
-
-<p>
-  <strong>Is admin:</strong>
-  <%= @user.is_admin %>
-</p>
-
-<% @responses.each do |question| %>
-  <p><%= question.content %><br />
-  <% if !!question.responses %>
-    <% @asked = question.responses %>
-    <% @asked.each do |question| %>
-    <%= question.content %></p>
+<div class="user-detail">
+  <div class="image-detail">
+  <% if !!@user.user_image.url %>
+  <%= image_tag @user.user_image.detail.url %>
+  <% end %>
+  </div>
+  <div class="text-detail">
+    <% if current_user == @user %>
+    <h2>Hi, <%= @user.username %></h2>
+    <ul>
+      <li><%= link_to 'Edit Account', edit_user_registration_path %></li>
+      <li><%= link_to 'Edit Responses', bulk_edit_questions_path %></li>
+        <% if current_user.is_admin %>
+          <li><%= link_to 'Edit Profile', edit_user_path(@user) %></li>
+          <li><%= link_to 'View All Users', users_path %></li>
+          <li><%= link_to 'View All Questions', questions_path %></li>
+          <li><%= link_to 'New Release', new_release_path %></li>
+        <% end %>
+    </ul>
+    <% else %>
+    <h2><%= @user.username %></h2>
+    <% end %>
+  </div>
+</div>
+<div class="question-grid">
+  <ul>
+  <% @responses.each do |question| %>
+    <li><%= question.content %>
+    <% if !!question.responses %>
+      <% @asked = question.responses %>
+      <% @asked.each do |question| %>
+        <%= question.content %></li>
+      <% end %>
     <% end %>
   <% end %>
-<% end %>
 
-<% if current_user.is_admin %>
-<%= link_to 'Edit Profile', edit_user_path(@user) %> |
-<%= link_to 'View All Users', users_path %> | 
-<%= link_to 'View All Questions', questions_path %> | 
-<%= link_to 'New Release', new_release_path %>
-
-<% end %>
+  </ul>
+</div>

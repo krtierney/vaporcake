@@ -15,9 +15,58 @@
   max-width: 100%;
 }
 
-#discography {
-  li {
-    display: inline-block;
-    padding: 15px;
+.grid {
+  display: inline-block;
+  padding: 3%;
+}
+
+.text-detail {
+ float: left; 
+ max-width: 45%;
+}
+
+
+.image-detail {
+  float: left;
+  margin-right: 5%;
+  margin-top: 15px;
+}
+
+.detail {
+  max-width: 70%;
+  margin: 0 auto;
+  min-height: 30vh;
+
+  p, h2 {
+    text-align: left;
+  }
+
+  p:last-child {
+    padding-top: 20px;
+  }
+
+  a {
+    padding-right: 5px;
+  }
+
+  a:last-child {
+    padding-left: 5px;
   }
 }
+
+.user-detail {
+  @extend .detail;
+  width: 40%;
+}
+
+.question-grid {
+  text-align: left;
+  max-width: 70%;
+  margin: 0 auto;
+  li {
+    display: inline-block;
+    padding: 10px;
+    width: 50%;
+    height: 50px;
+   }
+  }

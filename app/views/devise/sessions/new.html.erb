@@ -1,14 +1,9 @@
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
-
-  <div class="field">
-    <%= f.email_field :email, placeholder: 'email', autofocus: true %>
+  <div class="form-body">
+    <%= f.email_field :email, placeholder: 'email', :class => 'field', autofocus: true %>
+    <%= f.password_field :password, placeholder: 'password', :class => 'field',autocomplete: "off" %>
   </div>
-
-  <div class="field">
-    <%= f.password_field :password, placeholder: 'password', autocomplete: "off" %>
-  </div>
-
   <div class="actions">
     <%= f.submit "Log In" %>
   </div>

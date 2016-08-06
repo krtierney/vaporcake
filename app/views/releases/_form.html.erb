@@ -10,34 +10,23 @@
       </ul>
     </div>
   <% end %>
+  <div class="form-body">
+    <%= f.text_field :catalog_number, :class => 'field', :placeholder => 'Catalog Number, e.g. [vpk001]' %>
 
-  <div class="field">
-    <%= f.label :catalog_number %>
-    <%= f.text_field :catalog_number %>
+    <%= f.text_field :artist, :class => 'field', :placeholder => 'Artist Name'%>
+
+    <%= f.text_field :title, :class => 'field', :placeholder => 'Release Title' %>
+
+    <%= f.text_area :description, :class => 'field', :placeholder => 'Description' %>
+
+    <div class="file">
+      <%= f.label :upload_a_cover_image %><br />
+      <%= f.file_field :release_art %>
+    </div>
   </div>
-
-  <div class="field">
-    <%= f.label :artist %>
-    <%= f.text_field :artist %>
-  </div>
-
-  <div class="field">
-    <%= f.label :title %>
-    <%= f.text_field :title %>
-  </div>
-
-  <div class="field">
-    <%= f.label :description %>
-    <%= f.text_area :description %>
-  </div>
-
-  <div class="field">
-    <%= f.label :release_art %>
-    <%= f.file_field :release_art %>
-  </div>
-
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit 'Submit' %>
   </div>
+  
 <% end %>

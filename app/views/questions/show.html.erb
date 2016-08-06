@@ -1,7 +1,4 @@
-<p id="notice"><%= notice %></p>
-
 <p>
-  <strong>Content:</strong>
   <%= @question.content %>
 </p>
 
@@ -11,9 +8,8 @@
 </p>
 
 <p>
-  <strong>Creator:</strong>
-  <%= @question.creator_id %>
-</p>
-
+created by <%= User.find(@question.creator_id).username %></p>
+<p>
 <%= link_to 'Edit', edit_question_path(@question) %> |
 <%= link_to 'Back', questions_path %>
+</p>

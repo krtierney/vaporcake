@@ -1,11 +1,32 @@
-.field input {
-  background-color: white;
-  margin-bottom: 20px;
-  width: 33%;
-  &:focus {
-    outline-style: none;
+.form-body {
+  width: 40%;
+  text-align: left;
+  margin: 0 auto;
+
+
+  textarea {
+    border-radius: 5px;
+    width: 100%;
+    height: 150px;
   }
-  color: $dark-gray;
+}
+
+.field {
+    background-color: white;
+    margin-bottom: 20px;
+    text-align: left;
+    border-radius: 5px;
+    width: 90%;
+    color: $dark-gray;
+
+    &:focus {
+      outline-style: none;
+    }
+}
+
+.main {
+  @extend .field;
+  width: 60%;
 }
 
 .actions input {
@@ -13,3 +34,17 @@
   font-weight: 500;
   padding: 15px 30px;
 }
+
+.file  {
+  margin: 15px 0;
+  background-color: white;
+  border-radius: 5px;
+  padding: 15px 0 5px 15px;
+
+  label {
+    color: rgb(150,150,150);
+    font-family: 'Roboto', 'Helvetica', 'Verdana', sans-serif;
+    font-size: 18px;
+  }
+}
+

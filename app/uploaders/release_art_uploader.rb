@@ -35,6 +35,11 @@ class ReleaseArtUploader < CarrierWave::Uploader::Base
   version :thumb do
     process :resize_to_fill => [150, 150]
   end
+
+  version :bigger_thumb do
+    process :resize_to_fill => [250, 250]
+  end
+
   version :detail do
     process :resize_to_fit => [400, 400]
   end

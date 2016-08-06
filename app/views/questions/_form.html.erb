@@ -14,8 +14,8 @@
   <%= f.hidden_field :response_id, value: @display.id %>
   <% question.response_id = 0 if !question.response_id %>
 
-  <div class="field">
-    <%= f.text_field :content, placeholder: 'Please respond with a question' %>
+  <div>
+    <%= f.text_field :content, placeholder: 'Please respond with a question', :class => 'main' %>
   </div>
 
   <div class="actions">

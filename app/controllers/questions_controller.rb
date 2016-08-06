@@ -1,5 +1,6 @@
 class QuestionsController < ApplicationController
   before_action :set_question, only: [:show, :update, :destroy]
+  before_action :require_question_as_response, only: [:create]
   before_action :authenticate_user!
 
   def index
@@ -67,5 +68,14 @@ class QuestionsController < ApplicationController
 
     def question_params
       params.require(:question).permit(:content, :response_id, :creator_id).merge(creator_id: current_user.id)
+    end
+
+    def require_question_as_response
+      # need to access params before they're passed in somehow instead?
+      # This doesn't work as-is...
+      @question = Question.new(question_params)
+      unless @question.content.last == '?'
+        @question.content << '?'
+      end
     end
 end
