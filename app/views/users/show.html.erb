@@ -32,7 +32,8 @@
             </ul>
           </div>
         <% end %>
-        <p><%= f.check_box :is_admin %>grant <%= @user.username %> admin access <%= f.submit %></p>
+
+        <p><%= f.check_box :is_admin %>Admin?<%= f.submit 'Save', :class => 'admin-toggle' %></p>
         
       <% end %>
     <% end %>
