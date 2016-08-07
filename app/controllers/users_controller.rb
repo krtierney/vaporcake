@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :set_user, only: [:show, :update, :destroy]
   before_action :authenticate_user!
-  before_action :require_admin, only: [:index, :new, :create, :edit, :update, :delete]
+  before_action :require_admin, only: [:index, :new, :create, :update, :delete]
 
 
   #restrict to admin only
@@ -11,9 +11,6 @@ class UsersController < ApplicationController
 
   def show
     @responses = @user.questions_created
-  end
-
-  def edit
   end
 
   def update

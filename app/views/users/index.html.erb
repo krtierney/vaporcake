@@ -1,18 +1,16 @@
 <h1>Users</h1>
 <div class="detail">
   <% @users.each do |user| %>
-    <% if !!user.user_image.thumb.url %>
-      <%= image_tag user.user_image.thumb.url, :class => 'image-detail' %>
-    <% end %>
+
     <ul>
-      <li><%= link_to user.username, user %></li>
-      <% if user.logged_in %>
-      <li>Currently logged in</li>
-      <% end %>
-      <% if user.is_admin %>
-      <li>Admin</li>
-      <% end %>
-      <li><%= link_to 'Edit', edit_user_path(user) %> | <%= link_to 'Delete', user, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+      <li>
+        <%= link_to user.username, user %>       
+        <% if user.is_admin %>
+          (Admin)
+        <% end %>
+        <%= link_to '[delete]', user, method: :delete, data: { confirm: 'Are you sure?' } %>
+      </li>
+
   <% end %>
   </ul>
 </div>

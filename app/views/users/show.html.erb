@@ -11,7 +11,6 @@
       <li><%= link_to 'Edit Account', edit_user_registration_path %></li>
       <li><%= link_to 'Edit Responses', bulk_edit_questions_path %></li>
         <% if current_user.is_admin %>
-          <li><%= link_to 'Edit Profile', edit_user_path(@user) %></li>
           <li><%= link_to 'View All Users', users_path %></li>
           <li><%= link_to 'View All Questions', questions_path %></li>
           <li><%= link_to 'New Release', new_release_path %></li>
@@ -19,6 +18,25 @@
     </ul>
     <% else %>
     <h2><%= @user.username %></h2>
+    <% if current_user.is_admin %>
+
+      <%= form_for(@user) do |f| %>
+        <% if @user.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+            <ul>
+            <% @user.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+            </ul>
+          </div>
+        <% end %>
+        <p><%= f.check_box :is_admin %>grant <%= @user.username %> admin access <%= f.submit %></p>
+        
+      <% end %>
+    <% end %>
+
     <% end %>
   </div>
 </div>
