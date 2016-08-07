@@ -15,6 +15,21 @@
   max-width: 100%;
 }
 
+.users-list {
+  font-size: 20px;
+  font-weight: 300;
+  margin: 0 auto;
+  
+  td {
+    padding: 15px;
+    text-align: left;
+  }
+  th {
+    padding-bottom: 10px;
+  }
+}
+
+
 .grid {
   display: inline-block;
   padding: 3%;
@@ -24,7 +39,6 @@
  float: left; 
  max-width: 45%;
 }
-
 
 .image-detail {
   float: left;
@@ -55,14 +69,19 @@
 }
 
 .user-detail {
-  @extend .detail;
-  width: 40%;
+  margin-left: 50%;
+  transform: translate(-40%);
+  z-index: 2;
+  max-width: 100%;
+  padding-bottom: 40px;
 }
 
 .question-grid {
   text-align: left;
   max-width: 70%;
   margin: 0 auto;
+  clear: both;
+  display: block;
   li {
     display: inline-block;
     padding: 10px;

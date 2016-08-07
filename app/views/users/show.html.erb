@@ -4,10 +4,10 @@
   <%= image_tag @user.user_image.detail.url %>
   <% end %>
   </div>
-  <div class="text-detail">
+  <div class="list">
     <% if current_user == @user %>
     <h2>Hi, <%= @user.username %></h2>
-    <ul>
+    <ul class="list">
       <li><%= link_to 'Edit Account', edit_user_registration_path %></li>
       <li><%= link_to 'Edit Responses', bulk_edit_questions_path %></li>
         <% if current_user.is_admin %>
