@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
   get 'statics/homepage'
 
-  
   devise_for :users
 
   root "statics#homepage"

@@ -2,13 +2,15 @@
   width: 40%;
   text-align: left;
   margin: 0 auto;
+}
 
-
-  textarea {
-    border-radius: 5px;
-    width: 100%;
-    height: 150px;
-  }
+textarea {
+  border-radius: 5px;
+  width: 90%;
+  font-size: 18px;
+  padding: 20px 20px 0 20px;
+  resize: none;
+  height: 1.2em;
 }
 
 .field {

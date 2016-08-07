@@ -1,6 +1,5 @@
 class QuestionsController < ApplicationController
   before_action :set_question, only: [:show, :update, :destroy]
-  before_action :require_question_as_response, only: [:create]
   before_action :authenticate_user!
 
   def index
@@ -13,6 +12,13 @@ class QuestionsController < ApplicationController
   def new
     @question = Question.new
     @display = Question.all.sample
+    @users = User.where(logged_in: true)
+    @responses = @users.map do |user|
+      user.questions_created.where("created_at >= ?", session[:timestamp]).to_a
+      # user.questions_created.to_a
+    end.reduce([]) do |prev, current|
+      prev + current
+    end
   end
 
   def edit
@@ -21,6 +27,10 @@ class QuestionsController < ApplicationController
 
   def create
     @question = Question.new(question_params)
+
+    if @question.content.last != '?'
+      @question.content << '?'
+    end
 
     respond_to do |format|
       if @question.save
@@ -70,12 +80,12 @@ class QuestionsController < ApplicationController
       params.require(:question).permit(:content, :response_id, :creator_id).merge(creator_id: current_user.id)
     end
 
-    def require_question_as_response
-      # need to access params before they're passed in somehow instead?
-      # This doesn't work as-is...
-      @question = Question.new(question_params)
-      unless @question.content.last == '?'
-        @question.content << '?'
-      end
-    end
+    # def require_question_as_response
+    #   # need to access params before they're passed in somehow instead?
+    #   # This doesn't work as-is...
+    #   @question = Question.new(question_params)
+    #   unless @question.content.last == '?'
+    #     @question.content << '?'
+    #   end
+    # end
 end

@@ -3,18 +3,10 @@
 <%= render 'form', question: @question %>
 
 <div id="glitch-this">
-  <% User.all.each do |user| %>
-    <% if user.logged_in %>
-      <% @user = user %>
-      <% @responses = @user.questions_created %>
-      <% @responses.each do |question| %>
-        <% if !!question.responses %>
-          <% @asked = question.responses %>
-          <% @asked.each do |question| %>
-            <p><%= question.content %></p>
-          <% end %>
-        <% end %>
-      <% end %>
+  <% @responses.each do |question| %>
+    <p><%= question.content %></p>
+    <% question.responses.each do |response| %>
+      <p><%= response.content %></p>
     <% end %>
   <% end %>
 </div>

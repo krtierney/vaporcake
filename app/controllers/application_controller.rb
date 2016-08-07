@@ -35,10 +35,11 @@ class ApplicationController < ActionController::Base
       end
 
       def set_user_logged_in_state_to_true
-        current_user.update(logged_in: true)
+        session[:timestamp] = Time.now.utc
+        current_user.update(logged_in: true) if current_user
       end
 
       def set_user_logged_in_state_to_false
-        current_user.update(logged_in: false)
+        current_user.update(logged_in: false) if current_user
       end
 end
