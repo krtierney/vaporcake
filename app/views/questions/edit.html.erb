@@ -1,5 +1,4 @@
-<h1>Editing Question</h1>
-<%= bulk_update_questions_path %>
+<h1>Editing Questions</h1>
 <%= form_tag bulk_update_questions_path do %> 
   <% @responses.each do |question| %>
     <%= fields_for "questions[]", question do |f| %>
@@ -14,14 +13,12 @@
           </ul>
         </div>
       <% end %>
-
-      <div class="field">
-        <%= f.text_area :content %>
-      </div>
-
-      <%= link_to 'Delete', question, method: :delete, data: { confirm: 'Are you sure?' } %>
+    <div class="form-body">
+        <%= f.text_area :content, :class=> 'field' %>
+        <%= link_to 'Delete', question, method: :delete, data: { confirm: 'Are you sure?' } %></div>
     <% end %>
   <% end %>
+
   <div class="actions">
     <%= submit_tag %>
   </div>
