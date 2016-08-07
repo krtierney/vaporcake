@@ -36,12 +36,14 @@ h3 {
 
 .list {
   @extend p;
-  list-style-type: square;
   text-align: left;
-  padding-left: 15px;
   color: $primary-color;
 
   a {
     color: $primary-color;
+  }
+
+  li {
+    padding-left: 15px;
   }
 }

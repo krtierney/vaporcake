@@ -1,8 +1,10 @@
-<h1>Question Index</h1>
-<ul>
-  <% @questions.each do |question| %>
-      <li>
-        <%= link_to question.content, question %><%=  %>
-        <%= link_to '[delete]', question, method: :delete, data: { confirm: 'Are you sure?' } %></li>
-    <% end %>
-</ul>   
+<table class="index-list">
+<th colspan="2">Question Index</th>
+<% @questions.each do |question| %>
+    <tr>
+    <td><%= link_to question.content, question %></td>       
+      <td><%= link_to '[delete]', question, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+<% end %>
+</table>
+  
