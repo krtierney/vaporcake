@@ -67,3 +67,15 @@ textarea {
   transform: translateY(130%);
   margin-right: 20px;
 }
+
+@media only screen and (max-width: 750px) {
+  .form-body {
+    width: 75%;
+  }
+}
+
+@media only screen and (max-width: 475px) {
+  .form-body {
+      width: 95%;
+    }
+}
