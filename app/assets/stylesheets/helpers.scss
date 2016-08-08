@@ -89,6 +89,12 @@
 
 .glitch-this {
   position: absolute;
-  top: 15%;
+  top: 0;
   z-index: -1;
+  -webkit-columns: 3 240px;
+  -moz-columns: 3 240px;
+  columns: 3 240px;
+  -webkit-column-gap: 0;
+  -moz-column-gap: 0;
+  column-gap: 0;
 }

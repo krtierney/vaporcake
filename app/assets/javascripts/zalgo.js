@@ -96,7 +96,7 @@ $(document).on('turbolinks:load', function() {
 
     //build blocks for each line & create a <br />
     newtxt.split("\n").forEach(function(line) {
-      $container.append('<div>' + line + '</div><br />');
+      $container.append(line + '<br />');
     });
   } 
 

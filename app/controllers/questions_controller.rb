@@ -52,23 +52,16 @@ class QuestionsController < ApplicationController
   end
 
   def update
-    respond_to do |format|
-      if @question.update(question_params)
-        format.html { redirect_to user_path(current_user) }
-        format.json { render :show, status: :ok, location: @question }
-      else
-        format.html { render :edit }
-        format.json { render json: @question.errors, status: :unprocessable_entity }
-      end
+    if @question.update(question_params)
+      redirect_to user_path(current_user)
+    else
+      render :edit
     end
   end
 
   def destroy
     @question.destroy
-    respond_to do |format|
-      format.html { redirect_to questions_url, notice: 'Question was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+    redirect_to questions_url, notice: 'Question was successfully destroyed.'
   end
 
   private
@@ -79,13 +72,4 @@ class QuestionsController < ApplicationController
     def question_params
       params.require(:question).permit(:content, :response_id, :creator_id).merge(creator_id: current_user.id)
     end
-
-    # def require_question_as_response
-    #   # need to access params before they're passed in somehow instead?
-    #   # This doesn't work as-is...
-    #   @question = Question.new(question_params)
-    #   unless @question.content.last == '?'
-    #     @question.content << '?'
-    #   end
-    # end
 end
