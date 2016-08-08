@@ -1,0 +1,13 @@
+one:
+  title: 'releasetitle'
+  description: 'this is a great release'
+  release_art: 'string with art file name'
+  artist: 'cinchel'
+  catalog_number: 'vpk0001'
+
+two:
+  title: 'secondtitle'
+  description: 'this is a bad release'
+  release_art: 'art file name'
+  artist: 'steve'
+  catalog_number: 'vpk0004'

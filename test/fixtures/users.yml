@@ -1,11 +1,15 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  username: MyString
-  logged_in: false
-  is_admin: false
+  username: 'naxuu'
+  logged_in: true
+  is_admin: true
+  email: 'naxuu@example.com'
+  encrypted_password: 'password'
 
 two:
-  username: MyString
+  username: 'mintcake'
   logged_in: false
   is_admin: false
+  email: 'mintcake@example.com'
+  encrypted_password: 'password'

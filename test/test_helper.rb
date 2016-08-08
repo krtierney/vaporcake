@@ -4,7 +4,19 @@ require 'rails/test_help'
 
 class ActiveSupport::TestCase
   # Setup all fixtures in test/fixtures/*.yml for all tests in alphabetical order.
-  fixtures :all
+  fixtures :releases, :users
 
-  # Add more helper methods to be used by all tests here...
+  module SignInHelper
+    def sign_in_as(user)
+      post sign_in_url(email: user.email, password: user.password)
+    end
+  end
+
+  module RequireAdmin
+    def require_admin(user)
+      unless user.is_admin
+        redirect_to root_path
+      end
+    end
+  end
 end

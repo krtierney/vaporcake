@@ -2,7 +2,6 @@
 
   <nav>
     <ul>
-      <li><%= link_to 'Home', new_question_path %></li>
       <li><%= link_to 'Discography', releases_path %></li>
       <% if current_user %>
         <li><%= link_to 'Account', user_path(current_user) %></li>
@@ -13,5 +12,5 @@
       <% end %>
     </ul>
   </nav>
-  <div id="clip"><h1>Vaporcake</h1></div>
+  <div id="clip"><h1><%= link_to 'Vaporcake', new_question_path %></h1></div>
 </header>
