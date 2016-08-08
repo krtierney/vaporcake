@@ -2,13 +2,12 @@
 
 <%= render 'form', question: @question %>
 
-<textarea id="zalgo_txt" >
+<div id="zalgo_txt" >
   <% @responses.each do |question| %>
     <%= question.content %>
   <% end %>
-</textarea>
+  <% current_user.questions_asked.each do |question| %>
+    <%= question.content %>
+  <% end %>
+</div>
 <div id="zalgo" class="glitch-this"></div>
-
-<script type="text/javascript">
-  zalgo_textarea('zalgo_txt');
-</script>

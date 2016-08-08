@@ -12,6 +12,10 @@ class QuestionsController < ApplicationController
   def new
     @question = Question.new
     @display = Question.all.sample
+
+    current_user.questions_asked << @display
+    @questions_asked = current_user.questions_asked.where("updated_at >= ?", session[:timestamp])
+
     @users = User.where(logged_in: true)
     @responses = @users.map do |user|
       user.questions_created.where("created_at >= ?", session[:timestamp]).to_a
@@ -32,14 +36,10 @@ class QuestionsController < ApplicationController
       @question.content << '?'
     end
 
-    respond_to do |format|
-      if @question.save
-        format.html { redirect_to new_question_path }
-        format.json { render :show, status: :created, location: @question }
-      else
-        format.html { render :new }
-        format.json { render json: @question.errors, status: :unprocessable_entity }
-      end
+    if @question.save
+      redirect_to new_question_path
+    else
+      render :new
     end
   end
 
