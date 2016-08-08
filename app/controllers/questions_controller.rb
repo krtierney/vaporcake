@@ -15,10 +15,15 @@ class QuestionsController < ApplicationController
     @users = User.where(logged_in: true)
     @responses = @users.map do |user|
       user.questions_created.where("created_at >= ?", session[:timestamp]).to_a
-      # user.questions_created.to_a
     end.reduce([]) do |prev, current|
       prev + current
     end
+    @questions = @users.map do |user|
+      user.questions_asked.where("updated_at >= ?", session[:timestamp]).to_a
+    end.reduce([]) do |prev, current|
+      prev + current
+    end
+
   end
 
   def edit
