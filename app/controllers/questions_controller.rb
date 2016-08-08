@@ -18,11 +18,6 @@ class QuestionsController < ApplicationController
     end.reduce([]) do |prev, current|
       prev + current
     end
-    @questions = @users.map do |user|
-      user.questions_asked.where("updated_at >= ?", session[:timestamp]).to_a
-    end.reduce([]) do |prev, current|
-      prev + current
-    end
 
   end
 

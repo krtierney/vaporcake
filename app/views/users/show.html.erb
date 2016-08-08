@@ -41,17 +41,10 @@
     <% end %>
   </div>
 </div>
-<div class="question-grid">
+<div class="question-grid index-list">
   <ul>
-  <% @responses.each do |question| %>
-    <li><%= question.content %>
-    <% if !!question.responses %>
-      <% @asked = question.responses %>
-      <% @asked.each do |question| %>
-        <%= question.content %></li>
-      <% end %>
+    <% @responses.each do |question| %>
+      <li><%= question.content %></li>
     <% end %>
-  <% end %>
-
   </ul>
 </div>
