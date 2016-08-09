@@ -1,10 +1,10 @@
-<div class="user-detail">
-  <div class="image-detail">
+<div class="user">
+  <div class="info">
   <% if !!@user.user_image.url %>
   <%= image_tag @user.user_image.detail.url %>
   <% end %>
   </div>
-  <div class="list">
+  <div class="list info">
     <% if current_user == @user %>
     <h2>Hi, <%= @user.username %></h2>
     <ul class="list">
@@ -43,17 +43,11 @@
 </div>
 <div class="question-grid index-list">
   <ul>
-    <%# @responses.each do |question| %>
-      <!-- <li><%#= question.content %></li> -->
-    <%# end %>
-
-    <% current_user.questions_asked.each do |question| %>
-      <%= question.content %>
-      <ul>
-        <% question.responses.where(creator_id: current_user.id).each do |response| %>
-          <li><%= response.content %></li>
-        <% end %>
-      </ul>
+    <% @user.questions_asked.each do |question| %>
+      <li class="asked"><%= question.content %></li>
+    <% end %>
+    <% @user.questions_created.each do |question| %>
+      <li><%= question.content %></li>
     <% end %>
   </ul>
 </div>

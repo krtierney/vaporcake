@@ -8,7 +8,6 @@ class UsersController < ApplicationController
   end
 
   def show
-    @responses = @user.questions_created
   end
 
   def update
