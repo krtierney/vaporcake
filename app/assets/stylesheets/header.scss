@@ -17,6 +17,14 @@ header {
     font-style: italic;
     margin-top: 75px;
 
+    @media only screen and (max-width: 750px) {
+      font-size: 80px;
+    }
+
+    @media only screen and (max-width: 475px) {
+      font-size: 60px;
+    }
+
     a {
       text-decoration: none;
       color: inherit;
@@ -49,6 +57,11 @@ nav ul li {
   font-size: 20px;
   font-weight: 400;
   overflow: hidden;
+
+  @media only screen and (max-width: 475px) {
+    padding: 4px;
+    font-size: 18px;
+  }
 }
 
 nav ul li:last-child {
@@ -66,20 +79,3 @@ nav ul li a:hover {
 }
 
 
-@media only screen and (max-width: 750px) {
-  header h1 {
-    font-size: 80px;
-  }
-
-}
-
-@media only screen and (max-width: 475px) {
-  header h1 {
-    font-size: 60px;
-  }
-
-  nav ul li {
-    padding: 4px;
-    font-size: 18px;
-  }
-}

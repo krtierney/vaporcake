@@ -1,7 +1,8 @@
-@import 'reset';
-@import 'buttons';
-@import 'helpers';
-@import 'https://fonts.googleapis.com/css?family=Bungee+Hairline|Bungee+Outline|Roboto:100,300,400,500,700,900&subset=latin-ext';
+@import 'reset',
+        'buttons',
+        'helpers',
+        'variables',
+        'https://fonts.googleapis.com/css?family=Bungee+Hairline|Bungee+Outline|Roboto:100,300,400,500,700,900&subset=latin-ext';
 
 $primary-color: rgba(255,220,255,1);
 
@@ -31,6 +32,14 @@ body {
     text-transform: uppercase;
     color: $primary-color;
     text-shadow: 0 0 10px $primary-color, 0 0 20px $primary-color, 0 0 30px $primary-color, 0 0 40px #ff00de, 0 0 70px #ff00de, 0 0 80px #ff00de, 0 0 100px #ff00de, 0 0 150px #ff00de;
+
+    @media only screen and (max-width: 800px) {
+      font-size: 80px;
+    }
+
+    @media only screen and (max-width: 580px) {
+      font-size: 60px;
+    }
   }
 
   h3 {
@@ -73,14 +82,3 @@ body {
   }
 }
 
-@media only screen and (max-width: 800px) {
- body h1 {
-    font-size: 80px;
-  }
-}
-
-@media only screen and (max-width: 580px) {
-  body h1 {
-    font-size: 60px;
-  }
-}
