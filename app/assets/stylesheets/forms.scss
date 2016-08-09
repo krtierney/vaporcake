@@ -2,6 +2,14 @@
   width: 40%;
   text-align: left;
   margin: 0 auto;
+
+  @media only screen and (max-width: 750px) {
+    width: 75%;
+  }
+
+  @media only screen and (max-width: 475px) {
+      width: 95%;
+  }
 }
 
 textarea {
@@ -14,16 +22,16 @@ textarea {
 }
 
 .field {
-    background-color: white;
-    margin-bottom: 20px;
-    text-align: left;
-    border-radius: 5px;
-    width: 90%;
-    color: $dark-gray;
+  background-color: white;
+  margin-bottom: 20px;
+  text-align: left;
+  border-radius: 5px;
+  width: 90%;
+  color: $dark-gray;
 
-    &:focus {
-      outline-style: none;
-    }
+  &:focus {
+    outline-style: none;
+  }
 }
 
 .main {
@@ -60,18 +68,6 @@ textarea {
   position: relative;
   transform: translateY(130%);
   margin-right: 20px;
-}
-
-@media only screen and (max-width: 750px) {
-  .form-body {
-    width: 75%;
-  }
-}
-
-@media only screen and (max-width: 475px) {
-  .form-body {
-      width: 95%;
-    }
 }
 
 #zalgo_txt {
