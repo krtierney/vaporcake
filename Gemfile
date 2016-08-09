@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'redcarpet'
 gem 'rmagick'
 gem 'carrierwave', '0.10.0'
 gem 'devise'

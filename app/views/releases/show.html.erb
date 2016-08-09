@@ -4,7 +4,7 @@
   </p>
   <div class="text-detail">
     <h2><%= @release.artist %>: <%= @release.title %></h2>
-    <p><%= @release.description %> [<%= @release.catalog_number %>]</p>
+    <p><%= markdown(@release.description) %> [<%= @release.catalog_number %>]</p>
 
     <% if !!current_user && current_user.is_admin %>
       <p>

@@ -1,8 +1,8 @@
 require_relative "../app/models/question"
 require_relative "../app/models/user"
 
-["users", "questions", "releases"].each do |table_name|
-  ActiveRecord::Base.connection.execute("TRUNCATE #{table_name} RESTART IDENTITY")
+["users", "questions", "releases", "questions_users"].each do |table_name|
+  ActiveRecord::Base.connection.execute("TRUNCATE #{table_name} RESTART IDENTITY CASCADE")
 end
 
 User.create([

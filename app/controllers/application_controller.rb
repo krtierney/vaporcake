@@ -5,7 +5,31 @@ class ApplicationController < ActionController::Base
   before_action :set_user_logged_in_state_to_false, if: :devise_controller?, only: [:destroy]
   before_action :set_user_logged_in_state_to_true, if: :devise_controller?, only: [:create]
 
+  helper_method :markdown
   protected
+
+    def markdown(text)
+      options = {
+        filter_html:     true,
+        hard_wrap:       true, 
+        link_attributes: { rel: 'nofollow', target: "_blank" },
+        space_after_headers: true, 
+        no_images:        true
+
+      }
+
+      extensions = {
+        autolink:           true,
+        superscript:        true,
+        lax_spacing:        true,
+        disable_indented_code_blocks: true
+      }
+
+      renderer = Redcarpet::Render::HTML.new(options)
+      markdown = Redcarpet::Markdown.new(renderer, extensions)
+
+      markdown.render(text).html_safe
+    end
 
     def require_admin
       unless current_user.is_admin
