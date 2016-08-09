@@ -6,7 +6,7 @@
     <h2><%= @release.artist %>: <%= @release.title %></h2>
     <p><%= @release.description %> [<%= @release.catalog_number %>]</p>
 
-    <% if current_user.is_admin %>
+    <% if !!current_user && current_user.is_admin %>
       <p>
       <%= link_to 'Edit', edit_release_path(@release) %> |
       <%= link_to 'Delete', @release, method: :delete, data: { confirm: 'Are you sure?' } %>
