@@ -3,15 +3,14 @@
     <%= image_tag(@release.release_art.detail.url, :class => 'image-detail') %>
   </p>
   <div class="text-detail">
-    <h2><%= @release.title %></h2>
-
-    <p><%= @release.description %></p>
+    <h2><%= @release.artist %>: <%= @release.title %></h2>
+    <p><%= @release.description %> [<%= @release.catalog_number %>]</p>
 
     <% if current_user.is_admin %>
-    <p>
-    <%= link_to 'Edit', edit_release_path(@release) %> |
-    <%= link_to 'Delete', @release, method: :delete, data: { confirm: 'Are you sure?' } %>
-    </p>
+      <p>
+      <%= link_to 'Edit', edit_release_path(@release) %> |
+      <%= link_to 'Delete', @release, method: :delete, data: { confirm: 'Are you sure?' } %>
+      </p>
     <% end %>
   </div>
 </div>
