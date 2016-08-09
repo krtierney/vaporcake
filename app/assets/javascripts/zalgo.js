@@ -1,5 +1,5 @@
 $(document).on('turbolinks:load', function() {
-  // This script was adapted from an online generator: ZALGO text script by tchouky
+  // This script was adapted from an online generator at https://eeemo.net: ZALGO text script by tchouky (2009)
 
   //those go UP
   var zalgo_up = [
