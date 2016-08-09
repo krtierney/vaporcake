@@ -13,7 +13,7 @@ class QuestionsController < ApplicationController
     @question = Question.new
     @display = Question.all.sample
 
-    current_user.questions_asked << @display
+    current_user.questions_asked << @display unless current_user.questions_asked.include?(@display)
     @questions_asked = current_user.questions_asked.where("updated_at >= ?", session[:timestamp])
 
     @users = User.where(logged_in: true)
