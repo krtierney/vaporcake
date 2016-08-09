@@ -1,6 +1,6 @@
 @import 'reset',
         'buttons',
-        'helpers',
+        'alerts',
         'variables',
         'https://fonts.googleapis.com/css?family=Bungee+Hairline|Bungee+Outline|Roboto:100,300,400,500,700,900&subset=latin-ext';
 
@@ -80,5 +80,22 @@ body {
       text-decoration: underline;
     }
   }
+}
+
+.shader {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  background: -webkit-linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.7));
+  z-index: 1;
+}
+
+.centered {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  z-index: 2;
+  max-width: 100%;
 }
 
