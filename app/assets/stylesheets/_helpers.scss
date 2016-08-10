@@ -90,13 +90,45 @@
           columns: 2 240px;
   li {
     padding: 10px;
-   }
   }
+}
 
 .glitch-this {
   position: absolute;
   top: 0;
+  height: 100vh;
+  overflow: hidden;
   z-index: -1;
+}
+
+.first {
+  animation: vertical 120s linear infinite;
+
+  @-webkit-keyframes vertical {
+    0% {
+     margin-top: 0px;
+    }
+    100% {
+     margin-top: -1600px;
+    }
+  }
+}
+
+.second {
+  animation: horizontal 95s infinite alternate ease-in-out;
+  
+  @-webkit-keyframes horizontal {
+    from {
+      left: 00%;
+    }
+
+    to {
+      left: 100%;
+    }
+  }
+}
+
+.third {
   -webkit-columns: 3 240px;
   -moz-columns: 3 240px;
   columns: 3 240px;

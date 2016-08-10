@@ -76,7 +76,7 @@ $(document).on('turbolinks:load', function() {
     
     var txt = $(selector).text();
     var newtxt = '';
-    var $container = $('#zalgo');
+    var $container = $('.zalgo');
       
     for(var i=0; i<txt.length; i++) {
       if(is_zalgo_char(txt.substr(i, 1)))
