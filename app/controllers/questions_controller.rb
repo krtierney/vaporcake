@@ -42,7 +42,7 @@ class QuestionsController < ApplicationController
 
       current_user.questions_asked << @display unless current_user.questions_asked.include?(@display)
     else
-      render :new
+      redirect_to new_question_path
     end
   end
 
