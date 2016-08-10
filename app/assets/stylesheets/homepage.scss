@@ -1,10 +1,11 @@
 @import 'reset',
+        'variables',
         'buttons',
         'alerts',
-        'variables',
+        'typography',
         'https://fonts.googleapis.com/css?family=Bungee+Hairline|Bungee+Outline|Roboto:100,300,400,500,700,900&subset=latin-ext';
 
-$primary-color: rgba(255,220,255,1);
+
 
 
 body, h3, p, .btn, a {
@@ -27,19 +28,34 @@ body {
   -moz-osx-font-smoothing: grayscale;
 
   h1 {
-    font-family: 'Bungee Outline', cursive;
-    font-size: 120px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 140px;
+    font-weight: 900;
+    letter-spacing: -5px;
+    color: transparent;
     text-transform: uppercase;
-    color: $primary-color;
-    text-shadow: 0 0 10px $primary-color, 0 0 20px $primary-color, 0 0 30px $primary-color, 0 0 40px #ff00de, 0 0 70px #ff00de, 0 0 80px #ff00de, 0 0 100px #ff00de, 0 0 150px #ff00de;
+    -webkit-transition: text-shadow 1s ease;
+    text-shadow: 0 0 1px rgba(0,0,0,.1);
+    font-style: italic;
 
-    @media only screen and (max-width: 800px) {
+    @media only screen and (max-width: 830px) {
       font-size: 80px;
     }
 
     @media only screen and (max-width: 580px) {
-      font-size: 60px;
+      font-size: 68px;
     }
+  }
+
+  #head {
+    background: -moz-radial-gradient(center, ellipse cover, rgba(251,8,255,1) 0%, rgba(87,0,128,1) 100%); /* ff3.6+ */
+    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgba(251,8,255,1)), color-stop(100%, rgba(87,0,128,1))); /* safari4+,chrome */
+    background:-webkit-radial-gradient(center, ellipse cover, rgba(251,8,255,1) 0%, rgba(87,0,128,1) 100%); /* safari5.1+,chrome10+ */
+    background: -o-radial-gradient(center, ellipse cover, rgba(251,8,255,1) 0%, rgba(87,0,128,1) 100%); /* opera 11.10+ */
+    background-size: cover;
+    color: #fff;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
   }
 
   h3 {
@@ -66,7 +82,7 @@ body {
   }
 
   p {
-    color: $primary-color;
+    color: $main-color;
     line-height: 1.6em;
 
     .itals { font-style: italic; }
@@ -74,7 +90,7 @@ body {
 
   a {
     text-decoration: none;
-    color: darken($primary-color, 20%);
+    color: darken($main-color, 20%);
 
     &:hover {
       text-decoration: underline;

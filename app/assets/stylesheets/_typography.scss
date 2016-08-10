@@ -5,6 +5,53 @@ h1, h2, h3, h4, h5, h6, ul, ol, p, a, table {
   color: white;
 }
 
+header h1 {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 120px;
+  font-weight: 700;
+  color: transparent;
+  text-transform: uppercase;
+  -webkit-transition: text-shadow 1s ease;
+  text-shadow: 0 0 1px rgba(0,0,0,.1);
+  font-style: italic;
+
+  a {
+    text-decoration: none;
+    color: inherit;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  @media only screen and (max-width: 750px) {
+    font-size: 80px;
+  }
+
+  @media only screen and (max-width: 475px) {
+    font-size: 60px;
+  }
+}
+
+nav ul li {
+  font-size: 20px;
+  font-weight: 400;
+
+  @media only screen and (max-width: 475px) {
+    padding: 4px;
+    font-size: 18px;
+  }
+  a {
+    color: $primary-color;
+    text-decoration: none;
+  
+    &:hover {
+      color: white;
+      text-decoration: none;
+    }
+  }
+}
+
 a {
   text-decoration: none;
 

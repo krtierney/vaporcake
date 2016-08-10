@@ -7,41 +7,16 @@ header {
   
   h1 {
     clear:both;
-    font-family: 'Open Sans', sans-serif;
-    font-size: 120px;
-    font-weight: 700;
-    color: transparent;
-    text-transform: uppercase;
-    -webkit-transition: text-shadow 1s ease;
-    text-shadow: 0 0 1px rgba(0,0,0,.1);
-    font-style: italic;
     margin-top: 75px;
-
-    @media only screen and (max-width: 750px) {
-      font-size: 80px;
-    }
-
-    @media only screen and (max-width: 475px) {
-      font-size: 60px;
-    }
-
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    a:hover {
-      text-decoration: none;
-    }
   }
 }
 
 #clip {
   background: url('textbg.jpg');
-    background-size: cover;
-    color: #fff;
-    -webkit-text-fill-color: transparent;
-    -webkit-background-clip: text;
+  background-size: cover;
+  color: #fff;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
 }
 
 nav {
@@ -54,28 +29,11 @@ nav ul li {
   display: inline-block;
   margin: 5px;
   padding: 10px;
-  font-size: 20px;
-  font-weight: 400;
   overflow: hidden;
 
-  @media only screen and (max-width: 475px) {
-    padding: 4px;
-    font-size: 18px;
-  }
 }
 
 nav ul li:last-child {
   margin-right: 20px;
 }
-
-nav ul li a {
-  color: $primary-color;
-  text-decoration: none;
-}
-
-nav ul li a:hover {
-  color: white;
-  text-decoration: none;
-}
-
 

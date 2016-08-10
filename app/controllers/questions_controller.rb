@@ -38,6 +38,9 @@ class QuestionsController < ApplicationController
 
     if @question.save
       redirect_to new_question_path
+      @display = Question.all.sample
+
+      current_user.questions_asked << @display unless current_user.questions_asked.include?(@display)
     else
       render :new
     end
