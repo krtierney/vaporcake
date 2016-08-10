@@ -49,7 +49,7 @@ Question.create([
   { content:  "How many chords are there (show your work)?", creator_id: 2 }
 ]);
 
-Release.create([
+Release.create!([
   { 
     title: "steps³ (bonus day)", 
     description: "Recorded, mixed and mastered on October 6th, 2015 at Dr. Pirates Studio. Instruments: guitar, laptop, arturia microbrute, Korg super drums DDM-110. Thanks: Kirstie, PJ Harvey (cat), Broadcast (cat), Vaporcake crew, coffee, Nate for screwing up the date and giving me this bonus day, Adam for the two-hour coffee break outside on a splendid Chicago autumn afternoon. Released November 13, 2015. OUT OF PRINT.",
@@ -88,8 +88,8 @@ Release.create([
     release_art: File.open(Rails.root.join 'db/images/vpk008.jpg')
 }, {
     title: "queen victoria's mech suit", 
-    description: "elizabethveldon.bandcamp.com
-    www.facebook.com/pages/Elizabeth-Veldon/105863159517672
+    description: "[Bandcamp](http://elizabethveldon.bandcamp.com)
+    [Facebook](http://www.facebook.com/pages/Elizabeth-Veldon/105863159517672)
     Cover by may sanderson. Released February 20, 2015. OUT OF PRINT.",
     artist: "elizabeth veldon",
     catalog_number: "vpk003",
