@@ -1,0 +1,86 @@
+@import 'reset',
+        'variables',
+        'alerts',
+        'typography';
+
+// body, h3, p, a {
+//   font-family: 'Roboto', 'Helvetica', 'Verdana', sans-serif;
+//   color: white;
+// }
+
+body {
+  background: url('errorsbg.jpg') no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  width: 100%;
+  height: 100vh;
+  margin: 0 auto;
+  text-align: center;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  h1 {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 140px;
+    font-weight: 900;
+    color: transparent;
+    text-transform: uppercase;
+    -webkit-transition: text-shadow 1s ease;
+    text-shadow: 0 0 1px rgba(0,0,0,.1);
+
+    @media only screen and (max-width: 830px) {
+      font-size: 80px;
+    }
+
+    @media only screen and (max-width: 580px) {
+      font-size: 68px;
+    }
+  }
+
+.error {
+    background: -moz-radial-gradient(center, ellipse cover, #0cff08 0%, #9508ff 100%); /* ff3.6+ */
+    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, #0cff08), color-stop(100%, #9508ff)); /* safari4+,chrome */
+    background:-webkit-radial-gradient(center, ellipse cover, #0cff08 0%, #9508ff 100%); /* safari5.1+,chrome10+ */
+    background: -o-radial-gradient(center, ellipse cover, #0cff08 0%, #9508ff 100%); /* opera 11.10+ */
+    background-size: cover;
+    color: #fff;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+  }
+
+  h3 {
+    color: #0cff08;
+    font-size: 80px;
+    font-weight: 300;
+    font-size: 40px;
+  }
+
+  p {
+    color: rgb(0,205,255);
+    line-height: 1.6em;
+    font-size: 22px;
+    font-weight: 300;
+  }
+
+  a {
+    text-decoration: none;
+    color: #0cff08;
+
+    &:hover {
+      font-weight: 500;
+      text-decoration: none;
+    }
+  }
+}
+
+.centered {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  z-index: 2;
+  width: 100%;
+}

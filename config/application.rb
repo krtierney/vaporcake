@@ -12,6 +12,8 @@ module Vaporcake
       g.test_framework    nil
       g.jbuilder          false
     end
-
+    config.exceptions_app = self.routes
   end
 end
+
+
