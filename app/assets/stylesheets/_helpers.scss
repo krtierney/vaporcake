@@ -1,5 +1,8 @@
 .index-list {
   margin: 0 auto;
+  z-index: 3;
+  position: relative;
+
   
   td {
     padding: 15px;
@@ -13,6 +16,9 @@
 .grid {
   display: inline-block;
   padding: 3%;
+  z-index: 3;
+  position: relative;
+
 }
 
 .text-detail {
@@ -46,6 +52,9 @@
   max-width: 80%;
   margin: 0 auto;
   min-height: 30vh;
+  z-index: 3;
+  position: relative;
+
 
   p:last-child {
     padding-top: 20px;
@@ -64,10 +73,15 @@
   max-width: 80%;
   padding-bottom: 40px;
   margin: 0 auto;
+  position: relative;
+  z-index: 3;
 }
 
 .info {
   display: inline-block;
+  z-index: 3;
+  position: relative;
+
 
   h2 {
     margin-left: 10px;
@@ -83,6 +97,7 @@
 .question-grid {
   max-width: 70%;
   margin: 0 auto;
+  z-index: 3;
   clear: both;
   text-align: left;
   -webkit-columns: 2 240px;
@@ -98,7 +113,7 @@
   top: 0;
   height: 100vh;
   overflow: hidden;
-  z-index: -1;
+  z-index: 1;
 }
 
 .first {

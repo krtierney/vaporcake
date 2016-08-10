@@ -1,7 +1,8 @@
+<div id="new-question-form">
 <h1><%= @display.content %></h1>
 
 <%= render 'form', question: @question %>
-
+</div>
 <div id="zalgo_txt" >
   <% @responses.each do |question| %>
     <%= question.content %>
@@ -11,6 +12,9 @@
     <%= question.content %>
   <% end %>
 </div>
-<div class="glitch-this zalgo first"></div>
-<div class="glitch-this zalgo second"></div>
-<div class="glitch-this zalgo third"></div>
+
+<% if @responses.present? %>
+  <div class="glitch-this zalgo first"></div>
+  <div class="glitch-this zalgo second"></div>
+  <div class="glitch-this zalgo third"></div>
+<% end %>
