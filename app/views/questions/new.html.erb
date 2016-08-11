@@ -7,7 +7,6 @@
   <% @responses.each do |question| %>
     <%= question.content %>
   <% end %>
-  <!-- questions_asked has many duplicates, need to filter for uniqueness somehow -->
   <% current_user.questions_asked.each do |question| %>
     <%= question.content %>
   <% end %>

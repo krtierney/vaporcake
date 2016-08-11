@@ -10,8 +10,8 @@
     <ul class="list">
       <li><%= link_to 'Edit Account', edit_user_registration_path %></li>
       <li><%= link_to 'Edit Responses', bulk_edit_questions_path %></li>
+      <li><%= link_to 'View All Users', users_path %></li>
         <% if current_user.is_admin %>
-          <li><%= link_to 'View All Users', users_path %></li>
           <li><%= link_to 'View All Questions', questions_path %></li>
           <li><%= link_to 'New Release', new_release_path %></li>
         <% end %>
