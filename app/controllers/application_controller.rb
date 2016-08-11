@@ -33,8 +33,7 @@ class ApplicationController < ActionController::Base
 
     def require_admin
       unless current_user.is_admin
-        flash[:error] = "You do not have administrative access."
-        redirect_to root_path
+        redirect_to root_path, alert: "You do not have administrative access."
       end        
     end
     helper_method :require_admin
