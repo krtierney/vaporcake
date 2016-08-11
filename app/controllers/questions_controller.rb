@@ -15,7 +15,6 @@ class QuestionsController < ApplicationController
 
     current_user.questions_asked << @display unless current_user.questions_asked.include?(@display)
     @questions_asked = current_user.questions_asked.where("updated_at >= ?", session[:timestamp])
-
     @users = User.where(logged_in: true)
     @responses = @users.map do |user|
       user.questions_created.where("created_at >= ?", session[:timestamp]).to_a
