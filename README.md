@@ -40,7 +40,9 @@ I’ve also utilised some Javascript/jQuery for DOM manipulation to handle autom
 * Determine which additional functionality Vaporcake would like to have: in-platform messaging? Adding user Twitter handles? Serving album downloads directly from the site? 
 
 ### Unsolved Problems
-* __Testing__: This is an area the WDI course covers far too briefly for my taste. I spent one entire project day reading documentation and trying to implement testing, but came up short. I’m quite keen to learn more about how to configure testing environments, write effective tests, and track test coverage.
+* __Testing__: This is an area the WDI course covers far too briefly for my taste. I spent one entire project day reading documentation and trying to implement testing, but came up short. I’m quite keen to learn more about how to configure testing environments, write effective tests, and track test coverage. Thanks to heavy user testing from a few skilled volunteers, I believe I identified and fixed any bugs and user interface issues. I used the pa11y CLI and VoiceOver in Safari for accessibility testing.
+
+![screen shot pa11y](https://cloud.githubusercontent.com/assets/2197306/17591226/25eb6ac6-5fd5-11e6-85c0-d97ee07bf928.png)
 
 ## Credits
 Coding is made more joyful through a collaborative practice, but I firmly believe in giving credit where due. Credit for the interactive construct goes to Vaporcake, whose concept I’ve rendered to the best of my current ability. The Zalgofy.js script has been adapted from [eemo.net](https://eeemo.net) by tchouky, from which I’ve extracted the Unicode character tables and a portion of the logic, and refactored it into jQuery. Thanks also to pretty much everyone on Stack Overflow for their enduring contributions (which I hope to repay in kind sometime soon). The team at General Assembly have all been invaluable as well, with thanks due especially to instructors Mike Hayden and Alex Chin and teaching assistants Chanse Campbell, Rosanna Rossington, and Rane Gowan.
