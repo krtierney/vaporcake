@@ -2,13 +2,13 @@
 
   <nav>
     <ul>
-      <li><%= link_to 'Discography', releases_path %></li>
+      <li><%= link_to 'Discography', releases_path, :class => current_class?(releases_path) %></li>
       <% if current_user %>
-        <li><%= link_to 'Account', user_path(current_user) %></li>
+        <li><%= link_to 'Account', user_path(current_user), :class => current_class?(user_path(current_user)) %></li>
         <li><%= link_to 'Log Out', destroy_user_session_path, method: :delete %></li>
       <% else %>
-        <li><%= link_to 'Log In', new_user_session_path %></li>
-        <li><%= link_to 'Register', new_user_registration_path %></li>
+        <li><%= link_to 'Log In', new_user_session_path, :class => current_class?(new_user_session_path) %></li>
+        <li><%= link_to 'Register', new_user_registration_path, :class => current_class?(new_user_registration_path) %></li>
       <% end %>
     </ul>
   </nav>
