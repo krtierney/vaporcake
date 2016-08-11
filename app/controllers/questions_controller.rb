@@ -31,7 +31,7 @@ class QuestionsController < ApplicationController
 
   def create
     @question = Question.new(question_params)
-
+    @question.content = @question.content.strip
     if @question.content.last != '?'
       @question.content << '?'
     end
@@ -75,4 +75,6 @@ class QuestionsController < ApplicationController
     def question_params
       params.require(:question).permit(:content, :response_id, :creator_id).merge(creator_id: current_user.id)
     end
+
+
 end
