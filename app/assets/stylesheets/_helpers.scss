@@ -116,54 +116,54 @@
   z-index: 1;
 }
 
-.first {
-  animation: vertical 120s linear infinite;
-  -webkit-animation: vertical 120s linear infinite;
-  -moz-animation: vertical 120s linear infinite;
-  -o-animation: vertical 120s linear infinite;
+// .first {
+//   animation: vertical 120s linear infinite;
+//   -webkit-animation: vertical 120s linear infinite;
+//   -moz-animation: vertical 120s linear infinite;
+//   -o-animation: vertical 120s linear infinite;
 
-  @-webkit-keyframes vertical {
-    0% { margin-top: 0px; }
-    100% { margin-top: -1600px; }
-  }
-  @-moz-keyframes vertical {
-    0% { margin-top: 0px; }
-    100% { margin-top: -1600px; }
-  }
-  @-o-keyframes vertical {
-    0% { margin-top: 0px; }
-    100% { margin-top: -1600px; }
-  }
-  @keyframes vertical {
-    0% { margin-top: 0px; }
-    100% { margin-top: -1600px; }
-  }
-}
+//   @-webkit-keyframes vertical {
+//     0% { margin-top: 0px; }
+//     100% { margin-top: -1600px; }
+//   }
+//   @-moz-keyframes vertical {
+//     0% { margin-top: 0px; }
+//     100% { margin-top: -1600px; }
+//   }
+//   @-o-keyframes vertical {
+//     0% { margin-top: 0px; }
+//     100% { margin-top: -1600px; }
+//   }
+//   @keyframes vertical {
+//     0% { margin-top: 0px; }
+//     100% { margin-top: -1600px; }
+//   }
+// }
 
-.second {
-  animation: horizontal 95s infinite alternate ease-in-out;
-  -webkit-animation: horizontal 95s infinite alternate ease-in-out;
-  -moz-animation: horizontal 95s infinite alternate ease-in-out;
-  -o-animation: horizontal 95s infinite alternate ease-in-out;
+// .second {
+//   animation: horizontal 95s infinite alternate ease-in-out;
+//   -webkit-animation: horizontal 95s infinite alternate ease-in-out;
+//   -moz-animation: horizontal 95s infinite alternate ease-in-out;
+//   -o-animation: horizontal 95s infinite alternate ease-in-out;
   
-  @-webkit-keyframes horizontal {
-    from { left: 00%; }
-    to { left: 100%; }
-  }
-  @-moz-keyframes horizontal {
-    from { left: 00%; }
-    to { left: 100%; }
-  }
-  @-o-keyframes horizontal {
-    from { left: 00%; }
-    to { left: 100%; }
-  }
-  @keyframes horizontal {
-    from { left: 00%; }
-    to { left: 100%; }
-  }
+//   @-webkit-keyframes horizontal {
+//     from { left: 00%; }
+//     to { left: 100%; }
+//   }
+//   @-moz-keyframes horizontal {
+//     from { left: 00%; }
+//     to { left: 100%; }
+//   }
+//   @-o-keyframes horizontal {
+//     from { left: 00%; }
+//     to { left: 100%; }
+//   }
+//   @keyframes horizontal {
+//     from { left: 00%; }
+//     to { left: 100%; }
+//   }
 
-}
+// }
 
 .third {
   -webkit-columns: 3 240px;
